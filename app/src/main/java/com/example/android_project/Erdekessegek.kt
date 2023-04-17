@@ -21,8 +21,8 @@ class Erdekessegek : AppCompatActivity() {
 
         birdfej = arrayOf(
             "Madarak",
-            "A legrégebbi ismert madárszerű faj",
-            "Miért fontos az embereknek?",
+            "Régi madár faj",
+            "Emberek számára",
             "Intelligencia",
             "Táplálkozás"
         )

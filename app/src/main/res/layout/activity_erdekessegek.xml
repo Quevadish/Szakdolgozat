@@ -10,9 +10,10 @@
         android:id="@+id/inforecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/kerdojel_5_"
+        android:focusable="auto"
+        android:focusableInTouchMode="false"
         tools:itemCount="5"
-        android:background="@drawable/felho"
-        tools:listitem="@layout/erdekessegekdesign"
-        />
+        tools:listitem="@layout/erdekessegekdesign" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
