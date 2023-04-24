@@ -1,6 +1,5 @@
 package com.example.android_project.adapter
 
-import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,16 +25,18 @@ class CustomAdapter (private val mList : ArrayList<ItemsViewModel>) :
         val currentItem = mList[position]
         holder.image.setImageResource(currentItem.image)
         holder.text.text = currentItem.text
-        holder.briefNews.text= currentItem.briefNews
+        holder.szoveg.text= currentItem.madartartalom
 
 
-        val igenisvisible : Boolean = currentItem.igenvisibility
-        holder.constraintLayout.visibility = if(igenisvisible) View.VISIBLE else View.GONE
+        val visible : Boolean = currentItem.lathatosag
+        holder.constraintLayout.visibility = if(visible) View.VISIBLE else View.GONE
 
         holder.image.setOnClickListener{
-            currentItem.igenvisibility = !currentItem.igenvisibility
+            currentItem.lathatosag = !currentItem.lathatosag
             notifyItemChanged(position)
         }
+
+
 
     }
 
@@ -47,7 +48,8 @@ class CustomAdapter (private val mList : ArrayList<ItemsViewModel>) :
 
         val image : ShapeableImageView = itemView.findViewById(R.id.madarkep)
         val text : TextView = itemView.findViewById(R.id.madarnev)
-        val briefNews : TextView = itemView.findViewById(R.id.briefNews)
+        val szoveg : TextView = itemView.findViewById(R.id.madartartalom)
+        val gomb : Button = itemView.findViewById(R.id.play_gomb)
         val constraintLayout : ConstraintLayout = itemView.findViewById(R.id.madarexpandedLayout)
 
 

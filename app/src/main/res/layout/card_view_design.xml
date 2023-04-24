@@ -63,13 +63,14 @@
         app:layout_constraintTop_toBottomOf="@+id/madarkep">
 
         <TextView
-            android:id="@+id/briefNews"
+            android:id="@+id/madartartalom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/teal_200"
             android:text="Tartalom"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

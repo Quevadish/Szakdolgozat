@@ -3,9 +3,7 @@ package com.example.android_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.animation.AlphaAnimation
 import android.widget.Button
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 

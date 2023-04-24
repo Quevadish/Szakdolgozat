@@ -4,7 +4,10 @@ package com.example.android_project
 
 
 
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,11 +22,13 @@ class Madarhangok : AppCompatActivity() {
     lateinit var birdimage: Array<Int>
     lateinit var birdtext : Array<String>
     lateinit var tartalmak : Array<String>
+    lateinit var hangok : Array<Int>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_madarhangok)
+
 
         birdimage = arrayOf(
             R.drawable.csuszka,
@@ -68,6 +73,19 @@ class Madarhangok : AppCompatActivity() {
             getString(R.string.fecske)
         )
 
+        hangok = arrayOf(
+            R.raw.csuszkaveg,
+            R.raw.vorosbegy,
+            R.raw.szencinege,
+            R.raw.szarka,
+            R.raw.csuszkaveg,
+            R.raw.csuszkaveg,
+            R.raw.csuszkaveg,
+            R.raw.csuszkaveg,
+            R.raw.csuszkaveg,
+            R.raw.csuszkaveg
+        )
+
 
 
 
@@ -82,7 +100,7 @@ class Madarhangok : AppCompatActivity() {
 
     private fun getUserData() {
         for(i in birdimage.indices){
-            val birds = ItemsViewModel(birdimage[i],birdtext[i],tartalmak[i])
+            val birds = ItemsViewModel(birdimage[i],birdtext[i],tartalmak[i],hangok[i])
             newArrayList.add(birds)
         }
         val adapter = CustomAdapter(newArrayList)
