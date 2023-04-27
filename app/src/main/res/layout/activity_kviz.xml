@@ -7,7 +7,7 @@
     android:gravity="center"
     android:background="@color/purple_500"
     android:orientation="vertical"
-    tools:context=".`K viz`">
+    tools:context=".Kviz">
 
 
     <TextView
@@ -49,18 +49,11 @@
                 />
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Kérlek add meg a neved!"
-                android:textColor="#757575"
-                android:textSize="16sp" />
 
 
 
             <Button
-                android:id="@+id/start"
+                android:id="@+id/btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
