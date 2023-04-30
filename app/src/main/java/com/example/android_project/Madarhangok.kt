@@ -1,33 +1,34 @@
 package com.example.android_project
 
 
-
-
-
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_project.adapter.CustomAdapter
 import com.example.android_project.model.ItemsViewModel
+import java.util.*
+import kotlin.collections.ArrayList
 
-class Madarhangok : AppCompatActivity() {
+class Madarhangok : AppCompatActivity(){
 
 
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<ItemsViewModel>
+    private lateinit var tempArrayList: ArrayList<ItemsViewModel>
     lateinit var birdimage: Array<Int>
     lateinit var birdtext : Array<String>
     lateinit var tartalmak : Array<String>
     lateinit var hangok : Array<Int>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_madarhangok)
+
+
 
 
         birdimage = arrayOf(
@@ -94,16 +95,73 @@ class Madarhangok : AppCompatActivity() {
         newRecyclerView.setHasFixedSize(true)
 
         newArrayList = arrayListOf<ItemsViewModel>()
+        tempArrayList = arrayListOf<ItemsViewModel>()
         getUserData()
 
+
+
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_item,menu)
+        val item = menu?.findItem(R.id.search_action)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                tempArrayList.clear()
+                val  searchText = newText!!.lowercase(Locale.getDefault())
+                if (searchText.isNotEmpty()){
+
+                    newArrayList.forEach{
+                        if (it.text.lowercase(Locale.getDefault()).contains(searchText))      {
+
+                            tempArrayList.add(it)
+
+                        }
+                    }
+                    newRecyclerView.adapter!!.notifyDataSetChanged()
+                }else{
+                    tempArrayList.clear()
+                    tempArrayList.addAll(newArrayList)
+                    newRecyclerView.adapter!!.notifyDataSetChanged()
+                }
+
+                return false
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
 
     private fun getUserData() {
         for(i in birdimage.indices){
             val birds = ItemsViewModel(birdimage[i],birdtext[i],tartalmak[i],hangok[i])
             newArrayList.add(birds)
         }
-        val adapter = CustomAdapter(newArrayList)
+
+
+
+        tempArrayList.addAll(newArrayList)
+        var adapter = CustomAdapter(tempArrayList)
         newRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : CustomAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+
+                val mediaPlayer = MediaPlayer.create(this@Madarhangok, hangok[position])
+                mediaPlayer.start()
+                mediaPlayer.setOnCompletionListener { mp ->
+                    mp.release()
+                }
+            }
+
+        })
     }
 }

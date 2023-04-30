@@ -5,14 +5,13 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 
+@Suppress("DEPRECATION")
 class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
 
 
@@ -20,6 +19,7 @@ class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
     private var mQuestionList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
     private var mCorrectAnswers: Int = 0
+    private var mAnswered = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,9 +48,8 @@ class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
 
 
 
+
     override fun onClick(v: View?) {
-
-
         val tv_option_one: TextView = findViewById(R.id.tv_option_one)
         val tv_option_two: TextView = findViewById(R.id.tv_option_two)
         val tv_option_three: TextView = findViewById(R.id.tv_option_three)
@@ -59,56 +58,68 @@ class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
 
         when (v?.id) {
             R.id.tv_option_one -> {
-                selectedOptionView(tv_option_one, 1)
+                if (!mAnswered) { // csak akkor válaszolhat, ha még nem válaszolt
+                    selectedOptionView(tv_option_one, 1)
+                    mSelectedOptionPosition = 1
+                }
             }
             R.id.tv_option_two -> {
-                selectedOptionView(tv_option_two, 2)
+                if (!mAnswered) {
+                    selectedOptionView(tv_option_two, 2)
+                    mSelectedOptionPosition = 2
+                }
             }
             R.id.tv_option_three -> {
-                selectedOptionView(tv_option_three, 3)
+                if (!mAnswered) {
+                    selectedOptionView(tv_option_three, 3)
+                    mSelectedOptionPosition = 3
+                }
             }
             R.id.tv_option_four -> {
-                selectedOptionView(tv_option_four, 4)
+                if (!mAnswered) {
+                    selectedOptionView(tv_option_four, 4)
+                    mSelectedOptionPosition = 4
+                }
             }
             R.id.btn_submit -> {
                 if (mSelectedOptionPosition == 0) {
-                    mCurrentPosition++
-
-                    when {
-                        mCurrentPosition <= mQuestionList!!.size -> {
-                            setQuestion()
-                        }
-                        else -> {
-                            val intent = Intent(this, Result::class.java)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
-                            startActivity(intent)
-                            finish()
-
-                        }
-                    }
-
-                } else {
-                    val question = mQuestionList?.get(mCurrentPosition  - 1)
-                    if (question!!.correct != mSelectedOptionPosition) {
-                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
-                    } else {
-                        mCorrectAnswers++
-                    }
-                    answerView(question!!.correct, R.drawable.correct_option_border_bg)
-
-                    if (mCurrentPosition == mQuestionList!!.size) {
-                        btn_submit.text = "FINISH"
-                    } else {
-                        btn_submit.text = "KÖVETKEZŐ KÉRDÉS"
-                    }
-                    mSelectedOptionPosition = 0
-
+                    Toast.makeText(this, "Válassz egy választ!", Toast.LENGTH_SHORT).show()
+                    return
                 }
+                mAnswered = true // válaszadás után megváltoztatjuk az állapotot
 
+                val question = mQuestionList?.get(mCurrentPosition - 1)
+                if (question!!.correct != mSelectedOptionPosition) {
+                    answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                } else {
+                    mCorrectAnswers++
+                }
+                answerView(question!!.correct, R.drawable.correct_option_border_bg)
+
+                if (mCurrentPosition == mQuestionList!!.size) {
+                    btn_submit.text = "CÉL"
+                } else {
+                    btn_submit.text = "KÖVETKEZŐ KÉRDÉS"
+                }
+                mSelectedOptionPosition = 0
+
+                Handler().postDelayed({
+                    mCurrentPosition++
+                    if (mCurrentPosition <= mQuestionList!!.size) {
+                        setQuestion()
+                    } else {
+                        val intent = Intent(this, Result::class.java)
+                        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
+                        startActivity(intent)
+                        finish()
+                    }
+                    mAnswered = false // visszaállítjuk az állapotot a következő kérdés előtt
+                }, 1000)
             }
         }
     }
+
 
     private fun setQuestion() {
 
@@ -127,9 +138,9 @@ class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
         defeaultOptionsView()
 
         if (mCurrentPosition == mQuestionList!!.size) {
-            btn_submit.text = "FINISH"
+            btn_submit.text = "CÉL"
         } else {
-            btn_submit.text = "SUBMIT"
+            btn_submit.text = "KÉSZ"
         }
 
         progressBar.progress = mCurrentPosition

@@ -21,30 +21,30 @@
 
     <TextView
         android:id="@+id/madarnev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="32dp"
-        android:background="#1BD625"
+        android:background="@drawable/namebackround"
         android:text="Csuszka"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/madarkep"
+        app:layout_constraintStart_toEndOf="@id/madarkep"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/play_gomb"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/playgomb"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:foreground="@drawable/ic_baseline_play_circle_outline_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.682"
-        app:layout_constraintStart_toStartOf="@id/madarnev"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/madarnev"
+        android:layout_marginTop="15sp"
+        />
+
 
 
 
@@ -66,9 +66,9 @@
             android:id="@+id/madartartalom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
+            android:background="#BF360C"
             android:text="Tartalom"
-            android:textColor="@color/black"
+            android:textColor="#44A7F4"
             android:textSize="16sp"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
