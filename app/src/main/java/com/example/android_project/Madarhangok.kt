@@ -41,7 +41,17 @@ class Madarhangok : AppCompatActivity(){
             R.drawable.retisas,
             R.drawable.solyom,
             R.drawable.bagoly,
-            R.drawable.fecske
+            R.drawable.fecske,
+            R.drawable.feketehattyu,
+            R.drawable.golya,
+            R.drawable.hullamospapagaj,
+            R.drawable.jegmadar,
+            R.drawable.kekszajko,
+            R.drawable.nagyfakopancs,
+            R.drawable.oszapo,
+            R.drawable.seregely,
+            R.drawable.tuzestorkukolibri,
+            R.drawable.varju
 
         )
 
@@ -55,7 +65,17 @@ class Madarhangok : AppCompatActivity(){
             "Rétisas",
             "Sólyom",
             "Bagoly",
-            "Fecske"
+            "Fecske",
+            "Fekete hattyú",
+            "Gólya",
+            "Hullámos papagáj",
+            "Jégmadár",
+            "Kék szajkó",
+            "Nagy fakopáncs",
+            "Őszapó",
+            "Seregély",
+            "Tüzestorkú kolibri",
+            "Varjú"
 
         )
 
@@ -71,20 +91,40 @@ class Madarhangok : AppCompatActivity(){
             getString(R.string.retisas),
             getString(R.string.solyom),
             getString(R.string.bagoly),
-            getString(R.string.fecske)
+            getString(R.string.fecske),
+            getString(R.string.hattyu),
+            getString(R.string.golya),
+            getString(R.string.papagaj),
+            getString(R.string.jegmadar),
+            getString(R.string.szajko),
+            getString(R.string.nagyfakopancs),
+            getString(R.string.oszapo),
+            getString(R.string.seregely),
+            getString(R.string.kolibri),
+            getString(R.string.varju)
         )
 
         hangok = arrayOf(
             R.raw.csuszkaveg,
-            R.raw.vorosbegy,
-            R.raw.szencinege,
+            R.raw.vereb,
             R.raw.szarka,
-            R.raw.csuszkaveg,
-            R.raw.csuszkaveg,
-            R.raw.csuszkaveg,
-            R.raw.csuszkaveg,
-            R.raw.csuszkaveg,
-            R.raw.csuszkaveg
+            R.raw.poszata,
+            R.raw.szencinege,
+            R.raw.vorosbegy,
+            R.raw.retisas,
+            R.raw.solyom,
+            R.raw.bagoly,
+            R.raw.fecske,
+            R.raw.feketehattyu,
+            R.raw.golya,
+            R.raw.hullamospapagaj,
+            R.raw.jegmadar,
+            R.raw.szajko,
+            R.raw.nagyfakopacs,
+            R.raw.oszapo,
+            R.raw.seregely,
+            R.raw.kolibri,
+            R.raw.varju
         )
 
 
@@ -146,7 +186,6 @@ class Madarhangok : AppCompatActivity(){
             val birds = ItemsViewModel(birdimage[i],birdtext[i],tartalmak[i],hangok[i])
             newArrayList.add(birds)
         }
-
 
 
         tempArrayList.addAll(newArrayList)

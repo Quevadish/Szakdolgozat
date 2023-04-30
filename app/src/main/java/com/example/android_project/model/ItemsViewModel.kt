@@ -7,6 +7,6 @@ data class ItemsViewModel(
     var image: Int,
     var text: String,
     var madartartalom: String,
-    val Button: Int,
+    var hang:Int,
     var lathatosag: Boolean = false
 )

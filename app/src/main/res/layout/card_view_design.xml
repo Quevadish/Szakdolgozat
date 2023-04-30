@@ -10,10 +10,10 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/madarkep"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:src="@drawable/csuszka"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,29 +21,20 @@
 
     <TextView
         android:id="@+id/madarnev"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/namebackround"
+        android:background="@drawable/madarnevekhatter"
         android:text="Csuszka"
         android:textColor="@color/black"
+        android:paddingTop="5dp"
         android:textSize="16dp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf=""
         app:layout_constraintStart_toEndOf="@id/madarkep"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/playgomb"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:foreground="@drawable/ic_baseline_play_circle_outline_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/madarnev"
-        android:layout_marginTop="15sp"
-        />
 
 
 
@@ -84,7 +75,7 @@
     <View
         android:id="@+id/madarunderline"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="5sp"
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         />
