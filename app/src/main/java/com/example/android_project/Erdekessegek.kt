@@ -1,7 +1,9 @@
 package com.example.android_project
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,13 +25,33 @@ class Erdekessegek : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_erdekessegek)
 
+        val visszagomb: Button = findViewById(R.id.back)
+
+        visszagomb.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         birdfej = arrayOf(
             "Madarak",
-            "Régi madár faj",
+            "Legrégebbi madár faj",
             "Emberek számára",
             "Intelligencia",
-            "Táplálkozás"
+            "Táplálkozás",
+            "Tüdő",
+            "Fehérvérsejt",
+            "Bélrendszer",
+            "Evolúció",
+            "Vese",
+            "Hasnyálmirigy",
+            "Nünüke",
+            "Hidra",
+            "Lucy",
+            "Szivverés és a víz",
+            "Nincs fókuszban",
+            "Láb és az alkar",
+            "Kamikaze hangyák",
+            "Gomba"
         )
 
         birdtartalom = arrayOf(
@@ -37,7 +59,21 @@ class Erdekessegek : AppCompatActivity() {
             getString(R.string.legregebbi),
             getString(R.string.emberek),
             getString(R.string.inteligencia),
-            getString(R.string.taplalkozas)
+            getString(R.string.taplalkozas),
+            getString(R.string.tudo),
+            getString(R.string.feherversejt),
+            getString(R.string.belrendszer),
+            getString(R.string.evoluvio),
+            getString(R.string.vese),
+            getString(R.string.hasnyalmirigy),
+            getString(R.string.nunuke),
+            getString(R.string.hidra),
+            getString(R.string.lucy),
+            getString(R.string.szivveres),
+            getString(R.string.agyor),
+            getString(R.string.alkar),
+            getString(R.string.kamikaze),
+            getString(R.string.gomba)
         )
 
         newinfoRecyclerView=findViewById(R.id.inforecyclerview)

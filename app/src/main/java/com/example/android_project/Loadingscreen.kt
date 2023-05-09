@@ -23,15 +23,10 @@ class Loadingscreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        // we used the postDelayed(Runnable, time) method
-        // to send a message with a delayed time.
-        //Normal Handler is deprecated , so we have to change the code little bit
-
-        // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000) // 3000 is the delayed time in milliseconds.
+        }, 3000)
     }
 }

@@ -26,6 +26,8 @@ class Kvizkerdesek : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kvizkerdesek)
 
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
 
         val tv_option_one: TextView = findViewById(R.id.tv_option_one)
         val tv_option_two: TextView = findViewById(R.id.tv_option_two)

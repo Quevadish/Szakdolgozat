@@ -14,11 +14,17 @@ class Kviz : AppCompatActivity() {
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
+        val vissza: Button=findViewById(R.id.backkviz)
+
+        vissza.setOnClickListener{
+            val intent=Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+
        val startbutton: Button = findViewById(R.id.btn_start)
        startbutton.setOnClickListener {
             val intent = Intent(this, Kvizkerdesek::class.java)
            startActivity(intent)
         }
-
     }
 }

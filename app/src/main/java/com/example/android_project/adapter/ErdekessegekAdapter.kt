@@ -23,7 +23,7 @@ class ErdekessegekAdapter (private val infoList : ArrayList<infoviewmodel>) :
 
         val infocurrentItem = infoList[position]
         holder.fej.text = infocurrentItem.FEJ
-        holder.brief.text = infocurrentItem.brief
+        holder.tartalom.text = infocurrentItem.tartalom
 
         val isvisible : Boolean = infocurrentItem.visibility
         holder.constraintLayout.visibility = if(isvisible) View.VISIBLE else View.GONE
@@ -42,7 +42,7 @@ class ErdekessegekAdapter (private val infoList : ArrayList<infoviewmodel>) :
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val fej :  TextView  = itemView.findViewById(R.id.fej)
-        val brief : TextView = itemView.findViewById(R.id.tartalom)
+        val tartalom : TextView = itemView.findViewById(R.id.tartalom)
         val constraintLayout : ConstraintLayout = itemView.findViewById(R.id.expandedLayout)
 
     }

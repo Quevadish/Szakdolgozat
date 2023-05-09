@@ -1,9 +1,11 @@
 package com.example.android_project
 
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +30,12 @@ class Madarhangok : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_madarhangok)
 
+        val back: Button = findViewById(R.id.vissza)
+
+        back.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

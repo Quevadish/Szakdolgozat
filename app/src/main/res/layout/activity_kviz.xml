@@ -4,23 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:background="@color/purple_500"
     android:orientation="vertical"
     tools:context=".Kviz">
 
+    <Button
+        android:id="@+id/backkviz"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/kerekites"
+        android:foreground="@drawable/ic_baseline_arrow_back_24"
+        />
 
     <TextView
         android:id="@+id/nev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kviz"
-        android:gravity="center"
+        android:text="Üdvözöllek az Applikációm Kviz részében!"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         />
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -35,22 +47,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:gravity="center"
             android:background="@color/white"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Üdvözöllek!"
-                android:textColor="#363A43"
+                android:gravity="start"
+                android:text="Információk:"
+                android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:gravity="start"
+                android:text="\n10 kérdésed lesz!\n\nNincs időkorlát!\n\nA képek segítenek a válaszadásban.\n\nAz Applikációban lévő információkból lesznek a kérdések!\n\n\n"
+                />
 
-
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:text="Jó játékot kivánok!"
+                />
 
             <Button
                 android:id="@+id/btn_start"

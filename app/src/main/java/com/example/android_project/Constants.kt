@@ -15,103 +15,103 @@ object Constants {
 
         val question1 = Question(
             1,
-            "Milyen állat ez?",
-            R.drawable.majom,
-            "Majom",
-            "Gorilla",
-            "Orangután",
-            "Csimpánz",
+            "Milyen madár látható a képen?",
+            R.drawable.fecske,
+            "Fecske",
+            "Veréb",
+            "Kakukk",
+            "Fakopáncs",
             1)
 
         val question2 = Question(
             2,
-            "Milyen állat ez?",
-            R.drawable.feketeparduc,
-            "Párduc",
-            "Jaguár",
-            "Macska",
-            "Feketepárduc",
+            "Milyen madár látható a képen?",
+            R.drawable.oszapo,
+            "Harkály",
+            "Cinege",
+            "Kutya",
+            "Őszapó",
             4)
 
         val question3 = Question(
             3,
-            "Milyen állat ez?",
-            R.drawable.jaguar,
-            "Párduc",
-            "Fecske",
-            "Jaguár",
-            "Ló",
+            "Milyen madár látható a képen?",
+            R.drawable.tuzestorkukolibri,
+            "Tukán",
+            "Papagáj",
+            "Tüzestorkú Kolibri",
+            "Sirály",
             3)
 
         val question4 = Question(
             4,
-            "Milyen állat ez?",
-            R.drawable.koala,
-            "Koala",
-            "Lajhár",
-            "Medve",
-            "Panda",
+            "Milyen madár látható a képen?",
+            R.drawable.hullamospapagaj,
+            "Hullámos papagáj",
+            "Daru",
+            "Gém",
+            "Páva",
             1)
 
         val question5 = Question(
             5,
-            "Milyen állat ez?",
-            R.drawable.krokodil,
-            "Aligátor",
-            "Krokodil",
-            "Giliszta",
+            "Melyik madárra tekintenek rossz ómen ként??",
+            R.drawable.varju,
+            "Vadliba",
+            "Varjú",
+            "Fecske",
             "Gólya",
             2)
 
         val question6 = Question(
             6,
-            "Milyen állat ez?",
-            R.drawable.lajhar,
-            "Panda",
-            "Koala",
-            "Lajhár",
-            "Gyík",
+            "Melyik madarat hivják halvidéki-pusztitónak?",
+            R.drawable.jegmadar,
+            "Kacsa",
+            "Sirály",
+            "Jégmadár",
+            "Pelikán",
             3)
 
         val question7 = Question(
             7,
-            "Milyen állat ez?",
-            R.drawable.medve,
-            "Jegesmedve",
-            "Feketemedve",
-            "Barnamedve",
-            "Panda",
+            "A néphiedelem szerint melyik madár hozza a kisbabát?",
+            R.drawable.golya,
+            "Vadkacsa",
+            "Vadliba",
+            "Gólya",
+            "Tyúk",
             3)
 
         val question8 = Question(
             8,
-            "Milyen állat ez?",
-            R.drawable.oroszlan,
-            "Tigris",
-            "Macska",
-            "Párduc",
-            "Oroszlán",
+            "Hogy hivtják a legrégebbi madárfajt?",
+            R.drawable.archaeopteryx,
+            "T-rex",
+            "Velociraptor",
+            "Pteranodon",
+            "Archaeopteryx",
             4)
 
 
         val question9 = Question(
             9,
-            "Milyen állat ez?",
-            R.drawable.zebra,
-            "Ló",
-            "Antilop",
-            "Zebra",
-            "Viziló",
+            "Mire használják a guanót?",
+            R.drawable.guano,
+            "Ruhakészítéshez",
+            "Ételhez",
+            "Festésre",
+            "Trágyázásra",
             3)
 
         val question10 = Question(
             10,
-            "Milyen állat ez?",
-            R.drawable.zsiraf,
-            "Zebra",
-            "Pelikán",
-            "Denevér",
-            "Zsiráf",
+            "Mit csinálnak a kamikaze hangyák ha vesztésre állnak?",
+            R.drawable.kamikazehangya,
+            "Kiabálnak",
+            "Semmit",
+            "Megeszik az ellenség fejét",
+            "Fellrobbantják magukat",
             4)
 
         val question11 = Question(
@@ -156,12 +156,12 @@ object Constants {
 
         val question15 = Question(
             15,
-            "Milyen típusú sejtből áll az emberi szervezet legnagyobb szerve, a bőr?",
-            R.drawable.emberibor,
-            "Vérsejtből",
-            " Idegsejtből",
-            "Laphámsejtből",
-            "Porcsejtből",
+            "Melyik madarat tartották a bölcsesség jelképének az ókori Görögországban?",
+            R.drawable.bagoly,
+            "Poszáta",
+            "Sas",
+            "Bagoly",
+            "Cinege",
             3)
 
         val question16 = Question(
