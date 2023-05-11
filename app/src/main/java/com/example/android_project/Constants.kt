@@ -17,7 +17,7 @@ object Constants {
             1,
             "Milyen madár látható a képen?",
             R.drawable.fecske,
-            "Fecske",
+            "Füstifecske",
             "Veréb",
             "Kakukk",
             "Fakopáncs",
