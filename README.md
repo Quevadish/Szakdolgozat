@@ -15,7 +15,7 @@ Miután meglett mindkettőnek a letöltése akkor bekell installálni az ANdroid
 Installálás után megnyitjuk az Android Studiót majd kikell választani a fájlomat.
 ![image](https://github.com/Quevadish/Szakdolgozat/assets/76959903/f914165a-84c8-421d-a0b2-3041f2676ed8)
 
-Kiválasztása után már csak elkell inditani, és ha nem installált be emulátort az Android Studi akkor majd most megtesi.
+Kiválasztása után már csak elkell inditani, és ha nem installált be emulátort az Android Studi akkor majd most megteszi.
 ![image](https://github.com/Quevadish/Szakdolgozat/assets/76959903/97315e49-132a-49ba-94df-e4d2fafa269d)
 
 Mitán lefutatta a fájlt és beinstallálta már használható is lesz az alkalmazás. 
